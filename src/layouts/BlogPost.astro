@@ -1,0 +1,97 @@
+---
+import { Picture } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import Avatar from "../assets/images/avatar.png";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "./Layout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<Layout {...Astro.props}>
+  <article
+    class="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16"
+  >
+    <h1
+      class="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white"
+      transition:name="heading"
+    >
+      {title}
+    </h1>
+    <div
+      class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center"
+    >
+      <div class="flex items-center">
+        <Picture
+          src={Avatar}
+          class="rounded-full h-6 w-6"
+          alt="Dedsec"
+          formats={["avif", "webp"]}
+        />
+        <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+          {"JavaScript / "}
+          <FormattedDate date={pubDate} />
+        </p>
+      </div>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
+        <!-- {readingTime(blog.body).text} -->
+        {` • `}
+        <!-- <BlogPostViews
+          client:only="react"
+          slug={blog.slug}
+          className="views"
+          increment
+        /> -->
+      </p>
+    </div>
+    <div class="w-full mt-4 prose dark:prose-light max-w-none break-words">
+      <h2>Description</h2>
+      <p>{description}</p>
+      <slot />
+    </div>
+    <!-- <GiscusComment client:only="react" />
+    <div class="text-sm text-gray-700 dark:text-gray-300">
+      <a
+        href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
+          `https://0xdedinfosec.vercel.app/blog/${slug}`
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {"Discuss on Twitter"}
+      </a>
+      {` • `}
+      <a
+        href="https://github.com/0xdedinfosec/0xdedinfosec-astro"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {"Suggest Change"}
+      </a>
+    </div> -->
+  </article>
+  <!-- <article>
+    <div class="hero-image">
+      {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+    </div>
+    <div class="prose">
+      <div class="title">
+        <div class="date">
+          <FormattedDate date={pubDate} />
+          {
+            updatedDate && (
+              <div class="last-updated-on">
+                Last updated on <FormattedDate date={updatedDate} />
+              </div>
+            )
+          }
+        </div>
+        <h1>{title}</h1>
+        <hr />
+      </div>
+      <slot />
+    </div>
+  </article> -->
+</Layout>
