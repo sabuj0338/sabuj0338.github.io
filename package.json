@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
+    "astro-themes": "^0.2.5",
     "gh-pages": "^6.3.0"
   }
 }

@@ -1,5 +1,6 @@
 ---
 import { cn } from "../lib/utils";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const currentPath = Astro.url.pathname;
 
@@ -31,4 +32,5 @@ const navLinks = [
       })
     }
   </div>
+  <ThemeSwitcher client:only='react' />
 </nav>

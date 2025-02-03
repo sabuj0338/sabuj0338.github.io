@@ -12,7 +12,6 @@ export default defineConfig({
   site: "https://sabuj0338.github.io",
   // base: "sabuj0338.github.io",
   integrations: [mdx(), sitemap(), react()],
-
   vite: {
     plugins: [tailwindcss()],
   },
