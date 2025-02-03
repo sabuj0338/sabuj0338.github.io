@@ -57,7 +57,7 @@ const BlogPostWithSearch = ({ sortedPosts }: Props) => {
                   <FormattedDateR date={post.pubDate} />
                 </p>
               </div>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 text-justify">
                 {post.description}
               </p>
             </div>

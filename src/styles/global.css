@@ -32,6 +32,7 @@
 .prose strong,
 .prose b {
   font-weight: 700;
+  color: inherit;
 }
 .prose a {
   color: var(--color-blue-700);
