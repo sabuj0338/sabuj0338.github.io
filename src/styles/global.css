@@ -14,7 +14,7 @@
   color: unset;
   line-height: 1.2;
 }
-.prose h1 {
+/* .prose h1 {
   font-size: 3.052em;
 }
 .prose h2 {
@@ -28,7 +28,7 @@
 }
 .prose h5 {
   font-size: 1.25em;
-}
+} */
 .prose strong,
 .prose b {
   font-weight: 700;
